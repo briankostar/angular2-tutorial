@@ -21,13 +21,13 @@ System.register(['angular2/core'], function(exports_1) {
                     this.title = 'Tour of Heroes';
                     this.hero = {
                         id: 1,
-                        name: 'Briward Sotrm'
+                        name: 'Braun StormShield'
                     };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>{{title}}</h1><h2>{{hero.name}} details!</h2><div><label>id: </label>{{hero.id}}</div><div><label>name: </label>{{hero.name}}</div>'
+                        template: "<h1>{{title}}</h1>\n    \t\t\t<h2>{{hero.name}} details!</h2>\n    \t\t\t<div><label>id: </label>{{hero.id}}</div>\n    \t\t\t<div><input [(ngModel)]=\"hero.name\"></div>"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
