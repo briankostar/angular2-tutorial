@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {Hero} from './hero'
 
 @Component({
-	selector: 'hero-detail',
+	selector: 'my-hero-detail',
 	template: `<div *ngIf="hero">
 					<h2>{{hero.name}} details!</h2>
 					<div><label>id: </label>{{hero.id}}</div>

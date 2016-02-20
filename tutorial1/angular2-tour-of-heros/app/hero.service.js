@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['./mock-heroes', 'angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,29 +8,34 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var HeroDetailComponent;
+    var mock_heroes_1, core_1;
+    var HeroService;
     return {
         setters:[
+            function (mock_heroes_1_1) {
+                mock_heroes_1 = mock_heroes_1_1;
+            },
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            HeroDetailComponent = (function () {
-                function HeroDetailComponent() {
+            HeroService = (function () {
+                function HeroService() {
                 }
-                HeroDetailComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-hero-detail',
-                        template: "<div *ngIf=\"hero\">\n\t\t\t\t\t<h2>{{hero.name}} details!</h2>\n\t\t\t\t\t<div><label>id: </label>{{hero.id}}</div>\n\t\t\t\t\t<div>\n\t\t\t\t\t    <label>name: </label>\n\t\t\t\t\t    <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t",
-                        inputs: ['hero']
-                    }), 
+                HeroService.prototype.getHeroes = function () {
+                    return Promise.resolve(mock_heroes_1.HEROES);
+                };
+                HeroService.prototype.getHeroesSlowly = function () {
+                    return new Promise(function (resolve) { return setTimeout(function () { return resolve(mock_heroes_1.HEROES); }); });
+                };
+                HeroService = __decorate([
+                    core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], HeroDetailComponent);
-                return HeroDetailComponent;
+                ], HeroService);
+                return HeroService;
             })();
-            exports_1("HeroDetailComponent", HeroDetailComponent);
+            exports_1("HeroService", HeroService);
         }
     }
 });
-//# sourceMappingURL=hero-detail.component.js.map
+//# sourceMappingURL=hero.service.js.map
