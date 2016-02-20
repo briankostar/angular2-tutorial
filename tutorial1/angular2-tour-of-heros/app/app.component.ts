@@ -1,9 +1,7 @@
 import {Component} from 'angular2/core';
+import {HeroDetailComponent} from './hero-detail.component'
+import {Hero} from './hero'
 
-interface Hero {
-	id: number,
-	name: string
-}
 
 let HEROES: Hero[] = [
   { "id": 11, "name": "Mr. Nice" },
@@ -28,15 +26,9 @@ let HEROES: Hero[] = [
 				  </li>
 				</ul>
 
-				<div *ngIf="selectedHero">
-					<h2>{{selectedHero.name}} details!</h2>
-					<div><label>id: </label>{{selectedHero.id}}</div>
-					<div>
-					    <label>name: </label>
-					    <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-					</div>
-				</div>
+				<hero-detail [hero]="selectedHero"></hero-detail>
     			`,
+    directives: [HeroDetailComponent],
     styles: [`
   .selected {
     background-color: #CFD8DC !important;
