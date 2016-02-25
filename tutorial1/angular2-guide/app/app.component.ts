@@ -7,6 +7,7 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 
 import { HighlightComponent } from './highlight/highlight.component';
+import { UnlessComponent } from './unless/unless.component';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { HighlightComponent } from './highlight/highlight.component';
       <a [routerLink]="['Dashboard']">Dashboard</a>
       <a [routerLink]="['Heroes']">Heroes</a>
       <a [routerLink]="['Highlight']">Highlight</a>
-
+      <a [routerLink]="['Unless']">Unless</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -49,7 +50,11 @@ import { HighlightComponent } from './highlight/highlight.component';
     path: '/highlight',
     name: 'Highlight',
     component: HighlightComponent
-  }
+  },
+  {
+    path: '/unless',
+    name: 'Unless',
+    component: UnlessComponent
 ])
 export class AppComponent {
   title = 'Tour of Heroes';

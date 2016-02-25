@@ -12,8 +12,8 @@ export class HighlightDirective {
 	@Input('myHighlight') highlightColor: string;
 	
 	@Input() set defaultColor(colorName:string){
-  this._defaultColor = colorName || this._defaultColor;
-}
+	  this._defaultColor = colorName || this._defaultColor;
+	}
 
 	private _defaultColor = 'red'
 	public color;
